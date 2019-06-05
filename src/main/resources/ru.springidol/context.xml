@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="baseSaxofonist" class="ru.springidol.Instrumentalist"
+          abstract="true">
+        <property name="song" value="Jingle Bells"/>
+        <property name="Instrument" ref="saxofon"/>
+    </bean>
+    <bean id="kenny" parent="baseSaxofonist"/>
+    <bean id="david" parent="baseSaxofonist"/>
+    <bean id="frank" parent="baseSaxofonist">
+        <property name="song" value="My live"/>
+    </bean>
+    <bean id="saxofon" class="ru.springidol.Saxofon"/>
+</beans>
