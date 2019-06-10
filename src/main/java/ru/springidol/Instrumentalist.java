@@ -1,10 +1,12 @@
 package ru.springidol;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component("eddie")
 public class Instrumentalist implements Performer {
     private String song;
-    //@Autowired○○                    ○
+    //@Autowired
     private Instrument instrument;
 
     public Instrumentalist() {
@@ -13,7 +15,7 @@ public class Instrumentalist implements Performer {
         this.song = song;
     }
     public String getSong() {return song;}
-    @Autowired
+
     public void setInstrument(Instrument instrument) {
         this.instrument = instrument;
     }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:contgext="http://www.springframework.org/schema/cache"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="baseSaxofonist" class="ru.springidol.Instrumentalist"
-          abstract="true">
+    <context:component-scan base-package="ru.springidol"/>
+
+    <bean id="kenny" class="ru.springidol.Instrumentalist">
         <property name="song" value="Jingle Bells"/>
-        <property name="Instrument" ref="saxofon"/>
+        <property name="instrument" ref="guitar"/>
     </bean>
-    <bean id="kenny" parent="baseSaxofonist"/>
-    <bean id="david" parent="baseSaxofonist"/>
-    <bean id="frank" parent="baseSaxofonist">
-        <property name="song" value="My live"/>
-    </bean>
+
+
     <bean id="saxofon" class="ru.springidol.Saxofon"/>
 </beans>
